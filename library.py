@@ -1,1 +1,2 @@
-print("Library Management System")
+def register_student():
+    print("Student registered")
