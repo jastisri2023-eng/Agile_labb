@@ -1,2 +1,2 @@
-def register_student():
-    print("Student registered")
+def login():
+    print("Login successful")
