@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo "Checkout stage running"
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'echo Building the project'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'echo Testing the project'
+            }
+        }
+
+    }
+}
