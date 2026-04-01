@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                bat 'javac Hello.java'
+            }
+        }
+
+        stage('Run') {
+            steps {
+                bat 'java Hello'
+            }
+        }
+
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: '*.class'
+            }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'CI Pipeline Successful'
+        }
+        failure {
+            echo 'CI Pipeline Failed'
+        }
+    }
+}

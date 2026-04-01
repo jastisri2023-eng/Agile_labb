@@ -1,0 +1,4 @@
+def hello jenkins():
+    print("Hello Jenkins")
+
+hello_jenkins()
